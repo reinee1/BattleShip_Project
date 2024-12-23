@@ -1,0 +1,142 @@
+Test cases for getrow:
+Test case 1: valid input
+Input: input = "A5 horizontal"
+       startCoord = 1, whiteSpaceIndex = 3 
+Expected output: row = 4
+Description: checks if the function works correctly for valid input
+
+Test case 2: Invalid input
+Input: input = "A horizontal"
+       startCoord = 1, whiteSpaceIndex = 2
+Expected Output:
+row = -1 
+Description: checks if the function returns -1 for invalid input
+
+Test Case 3: multiple digits in the Row
+Input: input = "A10 vertical"
+       startCoord = 1, whiteSpaceIndex = 3
+Expected Output:
+row = 9 
+Description: checks if the function can handle multi-digit numbers properly.
+
+Test Cases for getDigit
+Test Case 1: valid digit
+Input: c = '5'
+Expected Output:
+digit = 5
+Description: checks if the function can correctly convert a valid character to its corresponding integer value.
+
+Test Case 2: Invalid Digit
+Input:
+c = 'a'
+Expected Output:
+digit = -1
+Description: checks if the function returns -1 for invalid characters.
+
+Test Cases for clearInput
+Test Case 1: Input with newline
+Input: input = "A5 horizontal\n", size = 20
+Expected Output:
+-, but the function should remove the newline character.
+Description: checks if the function clears the input buffer properly when a newline character is present.
+
+Test Case 2: Input without newline
+Input: input = "A5 horizontal", size = 20
+Expected Output:
+The function should keep waiting until the newline or EOF is detected to ensure input is properly cleared.
+Description: checks if the function clears the input when there is no newline character but additional characters in the buffer
+
+Test Cases for printGrid
+Test Case 1: Valid Grid Print
+Input: grid = { {'~', '~', '~', '~', '~', '~', '~', '~', '~', '~'}, ... }
+Expected Output:
+The grid should be printed with appropriate formatting for the current difficulty
+Description: checks if the function prints the grid correctly for both "HARD" and "EASY" difficulty levels.
+
+Test Case 2: Empty Grid
+Input: grid = { {'~', '~', '~', '~', '~', '~', '~', '~', '~', '~'}, ... }
+Expected Output:
+The grid should print with all squares marked as '~'.
+Description: checks if the function prints an empty grid with no ships
+
+Test Cases for printGridInt
+Test Case 1: Valid Integer Grid Print
+Input: grid = { {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, ... }
+Expected Output:
+The grid should print with integer values, depending on the difficulty setting.
+Description: checks if the function prints the integer grid for the "EASY" difficulty correctly.
+
+Test Cases for getColumn
+Test Case 1: valid column (A-J)
+Input: input = 'A'
+Expected Output:
+0
+Description: checks if the function correctly maps 'A' to column 0.
+Test Case 2: Invalid Column
+Input:input = 'K'
+Expected Output:
+-1
+Description:checks if the function returns -1 for invalid column characters
+
+Test Cases for getOrientation
+Test Case 1: Valid Orientation
+Input: input = "horizontal"
+Expected Output:
+HORIZONTAL
+Description: checks if the function correctly returns the HORIZONTAL constant.
+
+Test Case 2: Invalid Orientation
+Input: input = "diagonal"
+Expected Output:
+-1 
+Description: checks if the function returns -1 for an invalid orientation string.
+
+Test Cases for getInputForPlacingShips
+Test Case 1: valid input for Placing Ships
+Input: input = "A5 horizontal"
+Expected Output:
+input.row = 4, input.column = 0, input.orientation = "horizontal"
+Description:checks if the function correctly extracts and stores the row, column, and orientation from the input string.
+
+Test Case 2: Invalid Input for Placing Ships
+Input: input = "B30 horizontal"
+Expected Output:
+input.row = -1 
+Description:checks if the function handles invalid input properly
+
+Test Cases for getInput
+Test Case 1: Valid Move Input (Torpedo)
+Input:input = "torpedo A5"
+Expected Output:
+input.moveName = "torpedo", input.row = 4, input.column = 0
+Description:checks if the function correctly parses the move name and coordinates for the "torpedo" action.
+Test Case 2: Invalid Move Input
+Input: input = "fire X10"
+Expected Output:
+input.moveName = "fire", input.row = -1, input.column = -1
+Description:checks if the function handles invalid input correctly 
+
+Test Cases for isInBound
+Test Case 1: Valid Coordinates
+Input:input.row = 3, input.column = 4
+Expected Output:
+1 
+Description:checks if the function correctly returns 1 for coordinates within bounds.
+
+Test Case 2: Invalid Coordinates
+Input:input.row = -1, input.column = 10
+Expected Output:
+0 
+Description:checks if the function correctly returns 0 for coordinates outside the grid bounds
+
+Test Cases for updateCoordBySquare
+Test Case 1: update coordinates right
+Input: input.row = 3, input.column = 4, iteration = 0
+Expected Output:
+input.row = 3, input.column = 5
+Description:checks if the function correctly updates the coordinates to the right.
+Test Case 2: update coordinates down
+Input: input.row = 3, input.column = 4, iteration = 1
+Expected Output:
+input.row = 4, input.column = 4
+Description:checks if the function correctly updates the coordinates down.
