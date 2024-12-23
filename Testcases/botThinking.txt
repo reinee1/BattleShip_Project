@@ -1,0 +1,21 @@
+Test case 1: radarSweep available
+Input: currentPlayer (bot) has available radarSweep, opposingPlayer->ships contains at least one ship
+Expected output: the bot should perform radar first, if it is successful, the bots probability grid should be updated,The handleRadar function should return successfully
+Description: checks if the bot performs radarSweep first when it is available
+
+Test case 2: torpedo available
+Input: currentPlayer->torpedo = 2 (available)
+Expected output: the bot should perform torpedo immediatly on the target coordinates
+Description: checks if the bot correctly performs the torpedo action when it is available, without falling back to artillery or regular fire.
+
+Test case 3: artillery available and torpedo uses are done
+Input: currentPlayer->artillery = 2
+Expected output: the bot should perform artillery immediatly if he cant use torpedo
+Description: checks if the bot correctly performs the artillery action when it is available and uses the correct target based on the probability grid
+
+Test case 4: Fire move (no special moves available)
+Input:  currentPlayer->radarSweep = 3 (no more radar sweeps)
+        currentPlayer->torpedo = 0 (no torpedo available)
+        currentPlayer->artillery = 0 (no more artillery)
+Expected output: the bot should perform the regular fire using hadleFire
+Description:checks if the bot correctly defaults to a regular attack when no special moves (radar, torpedo, artillery) are available
