@@ -1,0 +1,117 @@
+fireMove() method:
+
+Test Case 1:
+Input:
+•	currentPlayer: Hits and misses grid is empty (' ')
+•	opposingPlayer: Ship present at [2][4] = 'X'
+•	Input coordinates: row = 2, column = 4
+Expected Output:
+Hit!
+The current player's hits and misses grid at [3][4] should update to '*'.
+Description:
+Tests that the function identifies a hit and updates the grid appropriately.
+
+Test Case 2
+Input:
+•	currentPlayer: Hits and misses grid is empty
+•	opposingPlayer: Grid contains no ships or no ship present at the inputted coordinates.
+•	Input coordinates: row = 2, column = 5
+Expected Output:
+Miss.
+The current player's hits and misses grid at [2][5] should update to 'o'.
+Description:
+Tests that the function correctly handles misses.
+
+Test Case 3
+Input:
+•	currentPlayer: Hits and misses grid has a hit at [4][4] = '*'
+•	opposingPlayer: Grid has a ship part at [4][4] = 'X'
+•	Input coordinates: row = 4, column = 4
+Expected Output:
+Congrats on hitting the same place twice!
+Description:
+Ensures no changes are made when a previously targeted spot is selected again.
+
+Test Case 4
+Input:
+•	currentPlayer: Hits and misses grid is empty (' ')
+•	opposingPlayer: Ship present at [3][4] = 'X'
+•	Input coordinates: row = 11, column = 4
+Expected Output:
+Invalid coordinates.
+Description:
+Tests that the function correctly handles out-of-bound coordinates.
+
+Test Case 5:
+Input:
+•	currentPlayer: Initialized with default values.
+•	opposingPlayer: A ship of size 2 at coordinates (3, 4) and (3, 5).
+•	Input: First hit at (3, 4), second hit at (3, 5).
+Expected Output:
+•	After first hit: Hit!
+•	After second hit: [Ship Name] has fallen!
+Description:
+Tests that the function properly handles a ship falling when all parts are hit.
+
+addHitOnShip():
+
+Test Case 1:
+Input: 
+•	currentPlayer initialized
+•	opposingPlayer has a ship at coordinates {3, 4} and {3, 5}
+•	input = {row: 3, column: 4}.
+Expected Output:
+•	Ship's hits value updated to 1.
+Description: Confirms the function registers a hit on the ship when the input matches a valid coordinate.
+
+Test Case 2:
+Input:
+•	currentPlayer initialized.
+•	opposingPlayer has a ship at {3, 4} and {3, 5} with hits = 1.
+•	input = {row: 3, column: 5}.
+Expected Output:
+•	Ship's hits value updated to 2.
+•	If the ship size is 2 then, [Ship Name] has fallen! message printed.
+•	This applies for ships of all sizes 4,3,2,1
+Description: Tests that the ship is marked as fallen when all parts are hit.
+
+Test Case 3:
+Input:
+•	currentPlayer initialized.
+•	opposingPlayer has no ship at {2, 4}.
+•	input = {row: 2, column: 4}.
+Expected Output:
+•	No changes will be made to the ship’s hit count.
+Description: Ensures no action is taken for a miss (invalid coordinate).
+
+
+shipFallen()
+
+Test Case 1:
+Input:
+•	currentPlayer initialized with artillery = 0, torpedo = 0.
+•	opposingPlayer->shipsLeft = 3.
+Expected Output:
+•	opposingPlayer->shipsLeft decreases to 2.
+•	currentPlayer->artillery is set to 1.
+Description: Ensures that destroying a ship reduces the opponent's shipsLeft and enables artillery for the current player.
+
+Test Case 2:
+Input:
+•	currentPlayer initialized with artillery = 1, torpedo = 0.
+•	opposingPlayer->shipsLeft = 2.
+Expected Output:
+•	opposingPlayer->shipsLeft decreases to 1.
+•	currentPlayer->torpedo is set to 1.
+Description: Confirms torpedo moves are enabled when the opponent has only one ship left.
+
+Test Case 3:
+Input:
+•	currentPlayer initialized with artillery = 1, torpedo = 1.
+•	opposingPlayer->shipsLeft = 1.
+Expected Output:
+•	opposingPlayer->shipsLeft decreases to 0.
+•	No further changes to currentPlayer.
+Description: Tests that the function handles the case when the opponent’s last ship falls without additional changes to the current player.
+
+\
