@@ -1,0 +1,76 @@
+artilleryMove():
+
+Test Case 1:
+Input:
+•	currentPlayer has unlocked artillery (sunk at least 1 of his opponent’s ships)..
+•	input: {row: 3, column: 3}.
+•	opposingPlayer has a ship covering coordinates (3, 3) and (3, 4).
+Expected Output:
+•	Cells (3, 3), (3, 4), (4, 3), and (4, 4) are targeted.
+•	Cells (3, 3) and (3, 4) are marked as hits.
+•	Output displays hits and misses for the 2x2 area.
+Description: Tests the artillery move hitting part of an opponent's ship within the 2x2 area.
+
+Test Case 2:
+Input:
+•	currentPlayer has not sunk  at least 1 of his opponent’s ship.
+•	input: {row: 5, column: 5}
+Expected Output:
+•	Artillery move is not allowed.
+•	Mentions the move is unavailable.
+Description: Confirms the artillery move cannot be used unless unlocked by sinking a ship.
+
+Test Case 3:
+Input:
+•	currentPlayer has unlocked artillery(sunk at least 1 of his opponent’s ships)..
+•	input: {row: 0, column: 9}.
+•	OpposingPlayer has no ships in the targeted area.
+Expected Output:
+•	Cells (0, 9), (1, 9), (0, 10 - invalid), and (1, 10 - invalid) are targeted.
+•	No hits are recorded; misses are outputted.
+Description: Verifies the artillery move handles grid boundaries and no hits correctly.
+
+
+
+Test Case 4:
+Input:
+•	currentPlayer has unlocked artillery (sunk at least 1 of his opponent’s ships).
+•	input: {row: 8, column: 8}.
+•	OpposingPlayer has a ship covering coordinates (9, 8) and (9, 9).
+Expected Output:
+•	Cells (8, 8), (8, 9), (9, 8), and (9, 9) are targeted.
+•	Cells (9, 8) and (9, 9) are marked as hits.
+Description: Confirms artillery can target a 2x2 area even if part of it is near the grid's edge.
+
+
+checkArtillery():
+
+Test Case 1:
+Input:
+•	currentPlayer->artillery = 1.
+Expected Output:
+•	Output: "Special move unlocked for 1 turn: artillery!"
+•	currentPlayer->artillery is updated to 2.
+Description: Confirms that the artillery move is unlocked and set for one turn.
+
+
+Test Case 2:
+Input:
+•	currentPlayer->artillery = 2.
+Expected Output:
+•	currentPlayer->artillery is updated to 0.
+Description: Verifies that the artillery move is disabled after one turn.
+
+Test Case 3:
+Input:
+•	currentPlayer->artillery = 0.
+Expected Output:
+•	No changes or output occur.
+Description: Ensures no action is taken if the artillery move is unavailable.
+
+Test Case 4:
+Input:
+•	currentPlayer->artillery = 3 (invalid state).
+Expected Output:
+•	No changes or output occur.
+Description: Confirms that the function safely handles invalid artillery states.S
