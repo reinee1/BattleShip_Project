@@ -1,0 +1,82 @@
+Test case 1:hitting a valid row
+Input: currentPlayer: torpedo = 2 (the move is available) 
+       opposingPlayer: has a ship in his grid at [2][4] = 'X'
+       input = row = 2, column = -1
+Expected output:
+currentPlayer's hits and misses grid at [2][4] = '*'
+"Hit at row 3"
+Description: checks the function where the current player uses the torpedo hits an entire row
+
+Test case 2: missing a valid row
+Input: currentPlayer: torpedo = 2 (the move is available) 
+       opposingPlayer: has no ship in row 3
+       input = row = 3, column = -1
+Expected output:
+if it is easy mode, currentPlayer's hits and misses grid at [3][..] = 'o',  if its hard it stays "~"
+"Miss at row 4"
+Description: checks the function where the current player uses torpedo misses an entire row
+
+Test case 3: hitting a valid column
+Input:currentPlayer: torpedo = 2 (the move is available) 
+      opposingPlayer: has a ship in his grid at [2][4] = 'X'
+      input = row = -1, column = 4
+Expected output: 
+"Hit at column 7"
+currentPlayer's hits and misses grid at [2][4] = '*'
+Description: checks the function where the current player uses torpedo and hits an entire column
+
+Test case 4: missing a valid column
+Input: currentPlayer: torpedo = 2 (the move is available) 
+       opposingPlayer: has no ship in col 3
+       input = row = -1, column = 3
+Expected output:
+if it is easy mode, currentPlayer's hits and misses grid at [..][3] = 'o', if its hard it stays "~"
+"Miss at row 4"
+Description: checks the function where the current player uses torpedo misses an entire row
+
+Test case 5: Invalid Target Coordinates 
+Input: currentPlayer: torpedo = 2 (the move is available)
+       opposingPlayer: his grid has ships
+       input: row = -1, col = -1 
+Expected output:
+"row and column are out of bounds"
+Description: checks if the function handles input out of bounds 
+
+Test case 6: Invalid row
+Input: torpedo = 2 (the move is available) 
+       opposingPlayer: has a ship in his grid at [2][4] = 'X'
+       input = row = 11, column = -1
+Expected output: 
+"Invalid row index."
+Description: checks if the function handles row out of bound
+
+Test case 7: Invalid column
+Input:currentPlayer: torpedo = 2 (the move is available) 
+      opposingPlayer: has a ship in his grid at [2][4] = 'X'
+      input = row = -1, column = 11
+Expected output: 
+"Invalid column index."
+Description: checks if the function handles column out of bound
+
+Test case 8: Move not available
+Input:currentPlayer: torpedo = 0 
+      opposingPlayer: has a ship in his grid at [2][4] = 'X'
+      input = row = -1, column = 4
+Expected output: 
+"conditions are not met"
+Description: checks if the function handles the case when the move is not unlocked yet
+
+Test case 9: Target hitten twice
+Input: currentPlayer: torpedo = 2 (the move is available), hitsAndMisses grid of the current player has "*" at [2][4]
+       opposingPlayer: has a ship in his grid at [2][4] = 'X' that had been hitten before
+       input = row = 2, column = -1
+Expected output: "Congrats on hitting the same place twice"
+Description: checks how the function work if the input passed had been targeted and hit before
+
+Test case 10: Target missed twice
+Input: currentPlayer: torpedo = 2 (the move is available), "o" on the hitsAndMisses at row 3 
+       opposingPlayer: has no ship in row 3
+       input = row = 3, column = -1
+Expected output:
+"Missed the same target twice"
+Description: checks how the function work if the input passed had been targeted and missed before

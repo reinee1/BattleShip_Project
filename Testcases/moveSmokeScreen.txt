@@ -1,0 +1,31 @@
+Test case 1: valid smoke screen
+Input: currentPlayer: smokeScreenCounter = 0
+       opposingPlayer: shipsLeft = 3
+       input: row = 2, col = 3 (B3, C3, B4, C4)
+Expected output:
+The currentPlayer's smokeGrid should have 'X' at [2][3], [3][3], [2][4], and [3][4]
+Description: checks if the function  applies the smoke screen correctly and increments the smokeScreenCounter
+
+Test case 2: smoke screen exceeds sunk ships
+Input: currentPlayer: smokeScreenCounter = 2 (player has used 2 smoke screens so far).
+       opposingPlayer: shipsLeft = 2 (opponent has 2 ships remaining).
+       input: Row = 4, Column = 5  
+Expected output:
+"You cannot hide more than you have sunk ships! Stand Strong"
+Description: checks if the function handles that a player cannot apply more smoke screens than the number of ships they have sunk
+
+Test case 3: Invalid Coordinates
+Input: currentPlayer: smokeScreenCounter = 0 
+       opposingPlayer: shipsLeft = 3 
+       input: Row = 11, Column = 11 (out of bounds).
+Expected output:
+"Invalid coord"
+Description: checks if the function handles invalid coordinates, out of bounds
+
+Test case 4: No valid squares
+Input: currentPlayer: smokeScreenCounter = 0
+       opposingPlayer: shipsLeft = 3 
+       input: Row = 8, Column = 9
+Expected output:
+"Let it be known that you have hidden absolutely no square, great job!"
+Description: checks if the function handles invalid smoke screen placement that go out of bounds.

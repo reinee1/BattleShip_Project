@@ -1,0 +1,38 @@
+Test cases for IsadjacentShips():
+Test case 1: no adjacent ships
+Input: row = 0, col = 0, shipSize = 3, orientation = HORIZONTAL
+Expected output: 0 
+Description: checks if the function returns 0 when there is no adjacent ships
+
+Test case 2: with adjacent ships
+Input: row = 0, col = 0, shipSize = 3, orientation = HORIZONTAL
+Expected output: 1
+Description: checks if the function returns 1 when there is an adjacetn ship
+
+Test cases for placeShipsEasy():
+Test 1: Easy Mode Ship Placement
+Input: player object with difficulty = easy
+Expected Output: The grid should show ships placed in random positions with no overlaps and within bounds.
+Description: checks if the function places the ships correctly randomly
+
+Test cases for placeShipsMedium():
+Test 1:
+Input: player object with difficulty = medium
+Expected Output: ships should be placed without overlap, respecting the adjacency rule.
+Description: checks if the function places the ships correctly randomly respecting the adjacency rule
+
+Test cases for placeShipsHard():
+Test 1:
+Input: player object with difficulty = hard
+Expected output: The grid should show ships placed without overlapping and based on allowed rules
+
+Test cases for isInCorner():
+Test case 1: valid corner placement
+Input: row = 0, col = 0, shipSize = 3, orientation = HORIZONTAL, allowCornerPlace = 1
+Expected output: the function should return 0
+Description: checks if the function returns 0 when corner placement is allowed
+
+Test case 2: invalid corner placement
+Input: row = 0, col = 0, shipSize = 3, orientation = HORIZONTAL, allowCornerPlace = 0
+Expected output: 1
+Description: checks if the function returns 1 when the corner placement is not allowed
