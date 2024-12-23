@@ -1,0 +1,76 @@
+Test Case 1: Random Player Assignment
+Input: player1.name = "Reine", player2.name = "Lea"
+Expected Output:
+One of the following outputs (depending on the random number):
+"The first player is Reine"
+"The first player is Lea"
+If player1 is assigned as the starting player, the player1 and player2 names should remain unchanged.
+If player2 is assigned as the starting player, the names of player1 and player2 should be swapped.
+Description:checks if the function correctly assigns the starting player randomly and switches the names accordingly if the second player is chosen to start.
+
+Test Case 2: Bot Player Handling
+Input: player1.name = "Reine", player2.name = "Bot", player2.isBot = 1
+Expected Output:
+"The first player is Reine" player1.isBot = 0, player2.isBot = 1
+Description:checks if the function handles the bot player correctly, ensuring that the isBot flag is updated and that the bot player does not start first.
+
+Test Case 2: initializeProbGrid
+Test Case 1: Initialize Grid
+Input: probGrid[GRID_SIZE][GRID_SIZE] (a 10x10 grid)
+Expected Output:
+all values in probGrid should be set to 0.
+Description: checks if the function initializes all cells of the probability grid to 0.
+
+Test Case 3: initializeGrid
+Test Case 1: Initialize Grid with '~'
+Input: grid[GRID_SIZE][GRID_SIZE] (a 10x10 grid)
+Expected Output:
+all values in grid should be set to '~'.
+Description:checks if the function initializes all cells of the grid to the ~ character, representing empty cells.
+
+Test Case 4: getDifficultyLevel
+Test Case 1: Valid Input (Easy)
+Input: input.moveName = "easy"
+Expected Output:
+0 
+Description: checks if the function correctly returns 0 for "easy" difficulty.
+Test Case 2: Valid Input (Hard)
+Input: input.moveName = "hard"
+Expected Output:
+1 
+Description:checks if the function correctly returns 1 for "hard" difficulty.
+
+Test Case 3: Invalid Input
+Input: input.moveName = "medium"
+Expected Output:
+"difficulty level unknown, try again."
+Description:checks if the function correctly prompts the user to enter a valid difficulty level when an invalid option is provided.
+
+Test Case 5:  getName
+Test Case 1: Valid Name Input
+Input: name = "Reine", size = 50, number = 1
+Expected Output:
+name = "Reine" 
+Description:checks if the function correctly reads and stores a valid name.
+
+Test Case 2: Name with Extra Whitespace
+Input: name = " Reine ", size = 50, number = 2
+Expected Output:
+name = "Reine" 
+Description:
+checks if the function removes leading and trailing whitespaces from the name input.
+Test Case 3: Name Longer than Size
+Input:
+name = "SuperLongNameThatExceedsSize", size = 10, number = 1
+Expected Output:
+The name should fit the size limit 
+Description: checks if the function handles the case where the entered name is too long.
+
+Test Case 6: for initializePlayer
+Test Case 1: Player Initialization
+Input: player = {} , number = 1
+Expected Output:
+The player's grid, hits and misses grid, and smoke grid should all be initialized to ~.
+Player name should be set to a valid string entered by the user.
+shipsLeft = 4, smokeScreenCounter = 0, radarSweep = 0, artillery = 0, torpedo = 0, isBot = 0.
+Description:checks if the function initializes a player properly, including their grids and attributes.
